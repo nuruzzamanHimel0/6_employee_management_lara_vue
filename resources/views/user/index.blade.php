@@ -16,6 +16,16 @@
             <div class="card">
                 <div class="card-title clearfix">
                     <h3 class="float-left">User List</h3>
+
+                    <form class="form-inline float-left" action="{{ route('users.index') }}">
+                        @csrf
+                        <div class="form-group mx-sm-3 mb-2">
+                          <label for="search" class="sr-only">Search User</label>
+                          <input type="text" class="form-control" id="search" name="search" placeholder="search">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Search</button>
+                      </form>
+
                     <a href="{{ route('users.create') }}" class="btn btn-success float-right">Create User</a>
                 </div>
 
