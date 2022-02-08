@@ -48,7 +48,7 @@
                 {{-- <h6 class="collapse-header">Countr:</h6> --}}
                 <a class="collapse-item" href="{{ route('users.index') }}">User List</a>
                 <a class="collapse-item" href="{{route('countries.index') }}">Country List</a>
-                <a class="collapse-item" href="cards.html">permision</a>
+                <a class="collapse-item" href="{{ route('states.index') }}">State list</a>
             </div>
         </div>
     </li>
