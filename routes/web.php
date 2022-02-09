@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\CountryController;
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\StateController;
 
 Route::get('/', function () {
@@ -21,6 +22,7 @@ Route::post('change/{user}/password', [ChangePasswordController::class,'changeUs
 Route::resource('countries', CountryController::class);
 Route::resource('states', StateController::class);
 Route::resource('cities', CityController::class);
+Route::resource('departments', DepartmentController::class);
 
 Auth::routes();
 

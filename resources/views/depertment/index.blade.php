@@ -15,10 +15,11 @@
         <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-title clearfix">
-                    <h3 class="float-left">City List</h3>
+                    <h3 class="float-left">Department List</h3>
 
-                    <form class="form-inline float-left" action="{{ route('cities.index') }}">
+                    <form class="form-inline float-left" action="{{ route('departments.index') }}">
                         @csrf
+                        @method('GET')
                         <div class="form-group mx-sm-3 mb-2">
                           <label for="search" class="sr-only">Search User</label>
                           <input type="text" class="form-control" id="search" name="search" placeholder="search">
@@ -26,7 +27,7 @@
                         <button type="submit" class="btn btn-primary mb-2">Search</button>
                       </form>
 
-                    <a href="{{ route('cities.create') }}" class="btn btn-success float-right">Create City</a>
+                    <a href="{{ route('departments.create') }}" class="btn btn-success float-right">Create Department</a>
                 </div>
 
                 <div class="card-body">
@@ -48,30 +49,22 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Country Name</th>
-                            <th scope="col">City name</th>
+                            <th scope="col"> Name</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($cities as $city )
+                            @foreach ($departments as $department )
                                 <tr>
                                     <th scope="row">
                                         {{ $loop->iteration }}
                                     </th>
-                                    <td>
-                                        @foreach ($countries as $country )
-                                            @if($country->id == $city->country_id)
-                                                {{ $country->name }}
-                                            @endif
-                                        @endforeach
-                                        {{-- {{ $city->country_code }} --}}
-                                    </td>
-                                    <td>{{ $city->name }}</td>
-                                    <td>
-                                        <a href="{{ route('cities.edit',['city'=>$city->id]) }}"class="btn btn-success">Edit</a>
 
-                                        <form action="{{ route('cities.destroy',['city'=>$city->id]) }}" method="POST">
+                                    <td>{{ $department->name }}</td>
+                                    <td>
+                                        <a href="{{ route('departments.edit',['department'=>$department->id]) }}"class="btn btn-success">Edit</a>
+
+                                        <form action="{{ route('departments.destroy',['department'=>$department->id]) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-danger">Delete</button>

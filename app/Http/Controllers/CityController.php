@@ -13,10 +13,16 @@ class CityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $cities = City::all();
         $countries = Country::all();
+        if($request->has('search')){
+            $cities = City::where('country_id','like','%'.$request->search.'%')
+            ->orwhere('name','like','%'.$request->search.'%')->get();
+            return view('city.index',compact('cities','countries'));
+        }
+
+        $cities = City::all();
         // dd($cities);
         return view('city.index',compact('cities','countries'));
     }
@@ -32,12 +38,6 @@ class CityController extends Controller
         return view('city.create',compact('countries'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // dd($request->all());

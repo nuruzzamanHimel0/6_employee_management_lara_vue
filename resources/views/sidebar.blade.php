@@ -50,6 +50,7 @@
                 <a class="collapse-item" href="{{route('countries.index') }}">Country List</a>
                 <a class="collapse-item" href="{{ route('states.index') }}">State list</a>
                 <a class="collapse-item" href="{{ route('cities.index') }}">City list</a>
+                <a class="collapse-item" href="{{ route('departments.index') }}">Department list</a>
             </div>
         </div>
     </li>
