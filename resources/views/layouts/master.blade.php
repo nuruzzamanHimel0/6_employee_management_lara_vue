@@ -20,6 +20,9 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+       <!-- Styles -->
+       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -96,7 +99,7 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->username }}</span>
                             <img class="img-profile rounded-circle"
-                                 src="img/undraw_profile.svg">
+                                 src="">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -156,7 +159,7 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>

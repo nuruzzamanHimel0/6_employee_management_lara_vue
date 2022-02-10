@@ -24,6 +24,10 @@ Route::resource('states', StateController::class);
 Route::resource('cities', CityController::class);
 Route::resource('departments', DepartmentController::class);
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('{any}',function(){
+    return view('employees.index');
+})->where('{any}','.*');

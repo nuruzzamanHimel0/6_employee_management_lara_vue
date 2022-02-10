@@ -1,0 +1,55 @@
+######### PROJECT INSTALL #################
+==>composer create-project laravel/laravel example-app
+
+########## laravel ui github ###########
+https://github.com/laravel/ui
+
+command:
+1)php artisan ui bootstrap --auth
+2) npm install && npm run dev
+3)npm run dev
+4)php artisan ui vue
+5) npm install && npn run dev
+if show error then
+
+66
+
+You need to update your vue-loader
+
+npm update vue-loader
+
+And if it is not installed, install it
+
+npm i vue-loader
+
+
+5) npm install && npn run dev
+6) npm run dev
+
+
+############### Router Vuejs after install ########### 
+1) node module delete
+2)  "dependencies": {
+        "vue-router": "^3.5.2"
+    }
+3) run : npm install && npm run watch
+
+####### ( 1 ) After ALl is done ##########
+=> npm run hot
+OR -----------------------
+=> npm run watch
+for compile project start All time
+
+##### ( 2 ) for laravel server open  command #####
+=> php artisan serve
+
+( 1 ) & ( 2 ) both serve is open done 
+
+
+############ veujs fontawsome ##########
+
+$ npm i --save @fortawesome/fontawesome-svg-core
+$ npm i --save @fortawesome/free-solid-svg-icons
+
+$ npm i --save @fortawesome/vue-fontawesome@latest
+

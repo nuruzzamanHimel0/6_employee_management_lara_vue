@@ -22,20 +22,12 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        <a class="nav-link collapsed" href="/employees"
         aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>System Management</span>
+            <span>Employee Management</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                {{-- <h6 class="collapse-header">Country:</h6> --}}
-                <a class="collapse-item" href="buttons.html">Country</a>
-                <a class="collapse-item" href="buttons.html">State</a>
-                <a class="collapse-item" href="cards.html">Depertment</a>
-                <a class="collapse-item" href="cards.html">City</a>
-            </div>
-        </div>
+
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
