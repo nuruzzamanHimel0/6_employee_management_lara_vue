@@ -23,21 +23,21 @@
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">
-                            <label for="country_id" class="col-md-4 col-form-label text-md-end">{{ __('Country Name') }}</label>
+                            <label for="states_id" class="col-md-4 col-form-label text-md-end">{{ __('Country Name') }}</label>
 
                             <div class="col-md-6">
 
-                                <select class="form-control" id="country_id" name="country_id" >
-                                    @foreach($countries as $country)
-                                        @if($city->country_id == $country->id)
+                                <select class="form-control" id="states_id" name="states_id" >
+                                    @foreach($states as $state)
+                                        @if($city->states_id == $state->id)
 
-                                        <option  value="{{ $country->id }}" >{{ $country->name }}</option>
+                                        <option  value="{{ $state->id }}" >{{ $state->name }}</option>
                                         @endif
                                     @endforeach
 
                                   </select>
 
-                                @error('country_id')
+                                @error('states_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

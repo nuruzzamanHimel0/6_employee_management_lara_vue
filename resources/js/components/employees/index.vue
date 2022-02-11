@@ -21,7 +21,7 @@
                         <button type="submit" class="btn btn-primary mb-2">Search</button>
                       </form>
 
-                    <a href="" class="btn btn-success float-right">Create City</a>
+                    <router-link :to="{ name:'compEmplyCreate' }" class="btn btn-success float-right">Create Employee</router-link>
                 </div>
 
                 <div class="card-body">
@@ -30,9 +30,11 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Country Name</th>
-                            <th scope="col">City name</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">First name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Department</th>
                           </tr>
                         </thead>
                         <tbody>

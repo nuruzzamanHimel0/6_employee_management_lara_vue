@@ -23,18 +23,18 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="country_id" class="col-md-4 col-form-label text-md-end">{{ __('Country Name') }}</label>
+                            <label for="states_id" class="col-md-4 col-form-label text-md-end">{{ __('Country Name') }}</label>
 
                             <div class="col-md-6">
 
-                                <select class="form-control" id="country_id" name="country_id" >
-                                    @foreach($countries as $country)
-                                    <option  value="{{ $country->id }}" >{{ $country->name }}</option>
+                                <select class="form-control" id="states_id" name="states_id" >
+                                    @foreach($states as $state)
+                                    <option  value="{{ $state->id }}" >{{ $state->name }}</option>
                                     @endforeach
 
                                   </select>
 
-                                @error('country_id')
+                                @error('states_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -60,9 +60,9 @@
                                         {{ $loop->iteration }}
                                     </th>
                                     <td>
-                                        @foreach ($countries as $country )
-                                            @if($country->id == $city->country_id)
-                                                {{ $country->name }}
+                                        @foreach ($states as $state )
+                                            @if($state->id == $city->states_id)
+                                                {{ $state->name }}
                                             @endif
                                         @endforeach
                                         {{-- {{ $city->country_code }} --}}

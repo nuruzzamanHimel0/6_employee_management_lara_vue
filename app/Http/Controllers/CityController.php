@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Country;
+use App\Models\State;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
@@ -15,16 +16,17 @@ class CityController extends Controller
      */
     public function index(Request $request)
     {
-        $countries = Country::all();
+        $states = State::all();
         if($request->has('search')){
             $cities = City::where('country_id','like','%'.$request->search.'%')
             ->orwhere('name','like','%'.$request->search.'%')->get();
-            return view('city.index',compact('cities','countries'));
+            return view('city.index',compact('cities','states'));
         }
 
+
+        // dd($states);
         $cities = City::all();
-        // dd($cities);
-        return view('city.index',compact('cities','countries'));
+        return view('city.index',compact('cities','states'));
     }
 
     /**
@@ -34,8 +36,8 @@ class CityController extends Controller
      */
     public function create()
     {
-        $countries = Country::all();
-        return view('city.create',compact('countries'));
+        $states = State::all();
+        return view('city.create',compact('states'));
     }
 
     public function store(Request $request)
@@ -43,11 +45,11 @@ class CityController extends Controller
         // dd($request->all());
            // dd($request->all() , $country);
            $validated = $request->validate([
-            'country_id' => ['required'],
+            'states_id' => ['required'],
             'name' => ['required', 'string', 'unique:cities'],
         ]);
         City::create([
-            'country_id' => $request->country_id,
+            'states_id' => $request->states_id,
             'name' => $request->name,
         ]);
         return redirect()->route('cities.index')->with('success','City Create successfully');
@@ -73,8 +75,8 @@ class CityController extends Controller
      */
     public function edit(City $city)
     {
-        $countries = Country::all();
-        return view("city.edit",compact('city','countries'));
+        $states = State::all();
+        return view("city.edit",compact('city','states'));
     }
 
     /**
@@ -89,12 +91,12 @@ class CityController extends Controller
 
         // dd($request->all() , $city);
         $validated = $request->validate([
-            'country_id' => ['required'],
+            'states_id' => ['required'],
             'name' => ['required', 'string', 'unique:cities,name,'.$city->id],
         ]);
 
         $city->update([
-            'country_id' => $request->country_id,
+            'states_id' => $request->states_id,
             'name' => $request->name,
         ]);
 
